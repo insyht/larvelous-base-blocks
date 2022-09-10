@@ -12,7 +12,7 @@ class Paragraph extends Migration
         // blocks
         $paragraphBlock = new Block();
         $paragraphBlock->resource_id = 'iws_paragraph';
-        $paragraphBlock->view = 'iws/resources/views/blocks/paragraph';
+        $paragraphBlock->view = 'insyht/larvelous-base-blocks/resources/views/blocks/paragraph';
         $paragraphBlock->label = 'Alinea';
         $paragraphBlock->description = 'Alinea';
         $paragraphBlock->save();

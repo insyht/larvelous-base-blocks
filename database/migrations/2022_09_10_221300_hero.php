@@ -11,7 +11,7 @@ class Hero extends Migration
         // blocks
         $heroImageBlock = new Block();
         $heroImageBlock->resource_id = 'iws_hero';
-        $heroImageBlock->view = 'iws/resources/views/blocks/hero';
+        $heroImageBlock->view = 'insyht/larvelous-base-blocks/resources/views/blocks/hero';
         $heroImageBlock->label = 'Hero';
         $heroImageBlock->description = 'A large image with some text below it, usually at the top of the page';
         $heroImageBlock->save();

@@ -11,7 +11,7 @@ class ImageAttention extends Migration
         // blocks
         $imageAttentionBlock = new Block();
         $imageAttentionBlock->resource_id = 'iws_image_attention';
-        $imageAttentionBlock->view = 'iws/resources/views/blocks/image_attention';
+        $imageAttentionBlock->view = 'insyht/larvelous-base-blocks/resources/views/blocks/image_attention';
         $imageAttentionBlock->label = 'ImageAttention';
         $imageAttentionBlock->description = 'Afbeeldingen aandachtstrekker';
         $imageAttentionBlock->save();

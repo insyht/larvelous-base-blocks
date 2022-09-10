@@ -11,7 +11,7 @@ class Newsletter extends Migration
         // blocks
         $newsletterBlock = new Block();
         $newsletterBlock->resource_id = 'iws_newsletter';
-        $newsletterBlock->view = 'iws/resources/views/blocks/newsletter';
+        $newsletterBlock->view = 'insyht/larvelous-base-blocks/resources/views/blocks/newsletter';
         $newsletterBlock->label = 'Newsletter';
         $newsletterBlock->description = 'Nieuwsbrief';
         $newsletterBlock->save();

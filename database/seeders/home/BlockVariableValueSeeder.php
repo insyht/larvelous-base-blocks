@@ -80,8 +80,21 @@ class BlockVariableValueSeeder extends Seeder
         $ctaUrlTextBlockVariable = BlockVariable::where('name', 'url_text')->where('block_id', $ctaBlock->id)->first();
 
         $template = Template::where('resource_id', 'iws_home')->first();
-        $baseParagraphTemplateBlock = BlockTemplate::where('block_id', $paragraphBlock->id)
+        $baseParagraphTemplateBlock1 = BlockTemplate::where('block_id', $paragraphBlock->id)
                                               ->where('template_id', $template->id)
+                                              ->where('ordering', 3)
+                                              ->first();
+        $baseParagraphTemplateBlock2 = BlockTemplate::where('block_id', $paragraphBlock->id)
+                                              ->where('template_id', $template->id)
+                                              ->where('ordering', 2)
+                                              ->first();
+        $baseParagraphTemplateBlock3 = BlockTemplate::where('block_id', $paragraphBlock->id)
+                                              ->where('template_id', $template->id)
+                                              ->where('ordering', 4)
+                                              ->first();
+        $baseParagraphTemplateBlock4 = BlockTemplate::where('block_id', $paragraphBlock->id)
+                                              ->where('template_id', $template->id)
+                                              ->where('ordering', 5)
                                               ->first();
         $baseImageAttentionTemplateBlock = BlockTemplate::where('block_id', $imageAttentionBlock->id)
                                               ->where('template_id', $template->id)
@@ -101,7 +114,7 @@ class BlockVariableValueSeeder extends Seeder
         $blockVariableValue->refresh();
         $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
         $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock->id;
+        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock1->id;
         $blockVariableValueTemplateBlock->ordering = 1;
         $blockVariableValueTemplateBlock->save();
 
@@ -113,7 +126,7 @@ class BlockVariableValueSeeder extends Seeder
         $blockVariableValue->refresh();
         $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
         $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock->id;
+        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock1->id;
         $blockVariableValueTemplateBlock->ordering = 2;
         $blockVariableValueTemplateBlock->save();
 
@@ -125,7 +138,7 @@ class BlockVariableValueSeeder extends Seeder
         $blockVariableValue->refresh();
         $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
         $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock->id;
+        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock2->id;
         $blockVariableValueTemplateBlock->ordering = 1;
         $blockVariableValueTemplateBlock->save();
 
@@ -137,7 +150,7 @@ class BlockVariableValueSeeder extends Seeder
         $blockVariableValue->refresh();
         $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
         $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock->id;
+        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock2->id;
         $blockVariableValueTemplateBlock->ordering = 2;
         $blockVariableValueTemplateBlock->save();
 
@@ -149,7 +162,7 @@ class BlockVariableValueSeeder extends Seeder
         $blockVariableValue->refresh();
         $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
         $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock->id;
+        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock1->id;
         $blockVariableValueTemplateBlock->ordering = 3;
         $blockVariableValueTemplateBlock->save();
 
@@ -162,7 +175,7 @@ class BlockVariableValueSeeder extends Seeder
 
         $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
         $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock->id;
+        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock2->id;
         $blockVariableValueTemplateBlock->ordering = 6;
         $blockVariableValueTemplateBlock->save();
 
@@ -175,7 +188,7 @@ class BlockVariableValueSeeder extends Seeder
 
         $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
         $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock->id;
+        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock4->id;
         $blockVariableValueTemplateBlock->ordering = 4;
         $blockVariableValueTemplateBlock->save();
 
@@ -187,7 +200,7 @@ class BlockVariableValueSeeder extends Seeder
         $blockVariableValue->refresh();
         $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
         $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock->id;
+        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock1->id;
         $blockVariableValueTemplateBlock->ordering = 4;
         $blockVariableValueTemplateBlock->save();
 
@@ -199,7 +212,7 @@ class BlockVariableValueSeeder extends Seeder
         $blockVariableValue->refresh();
         $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
         $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock->id;
+        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock1->id;
         $blockVariableValueTemplateBlock->ordering = 5;
         $blockVariableValueTemplateBlock->save();
 
@@ -211,7 +224,7 @@ class BlockVariableValueSeeder extends Seeder
         $blockVariableValue->refresh();
         $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
         $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock->id;
+        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock3->id;
         $blockVariableValueTemplateBlock->ordering = 1;
         $blockVariableValueTemplateBlock->save();
 
@@ -223,7 +236,7 @@ class BlockVariableValueSeeder extends Seeder
         $blockVariableValue->refresh();
         $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
         $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock->id;
+        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock4->id;
         $blockVariableValueTemplateBlock->ordering = 1;
         $blockVariableValueTemplateBlock->save();
 
@@ -235,7 +248,7 @@ class BlockVariableValueSeeder extends Seeder
         $blockVariableValue->refresh();
         $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
         $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock->id;
+        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock3->id;
         $blockVariableValueTemplateBlock->ordering = 2;
         $blockVariableValueTemplateBlock->save();
 
@@ -247,7 +260,7 @@ class BlockVariableValueSeeder extends Seeder
         $blockVariableValue->refresh();
         $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
         $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock->id;
+        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock4->id;
         $blockVariableValueTemplateBlock->ordering = 2;
         $blockVariableValueTemplateBlock->save();
 
@@ -259,7 +272,7 @@ class BlockVariableValueSeeder extends Seeder
         $blockVariableValue->refresh();
         $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
         $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock->id;
+        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock4->id;
         $blockVariableValueTemplateBlock->ordering = 3;
         $blockVariableValueTemplateBlock->save();
 

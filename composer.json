@@ -1,0 +1,11 @@
+{
+    "name": "insyht/larvelous-base-blocks",
+    "type": "project",
+    "description": "Basic blocks for the Larvelous CMS.",
+    "keywords": [
+        "cms",
+        "larvelous"
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

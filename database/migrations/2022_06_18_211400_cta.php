@@ -1,7 +1,8 @@
 <?php
 
-use App\Block;
-use App\BlockVariable;
+use App\Models\Block;
+use App\Models\BlockVariable;
+use App\Models\BlockVariableType;
 use Illuminate\Database\Migrations\Migration;
 
 class Cta extends Migration
@@ -21,73 +22,82 @@ class Cta extends Migration
         $blockVariable = new BlockVariable();
         $blockVariable->block_id = $newsletterBlock->id;
         $blockVariable->name = 'email';
-        $blockVariable->label = 'E-mailadres';
-        $blockVariable->type = 'textfield';
+        $blockVariable->label = 'cms.emailAddress';
+        $blockVariable->type = BlockVariableType::TYPE_TEXTFIELD;
         $blockVariable->required = 0;
+        $blockVariable->ordering = 1;
         $blockVariable->save();
 
         $blockVariable = new BlockVariable();
         $blockVariable->block_id = $newsletterBlock->id;
         $blockVariable->name = 'function';
-        $blockVariable->label = 'Functie';
-        $blockVariable->type = 'textfield';
+        $blockVariable->label = 'cms.function';
+        $blockVariable->type = BlockVariableType::TYPE_TEXTFIELD;
         $blockVariable->required = 0;
+        $blockVariable->ordering = 2;
         $blockVariable->save();
 
         $blockVariable = new BlockVariable();
         $blockVariable->block_id = $newsletterBlock->id;
         $blockVariable->name = 'image';
-        $blockVariable->label = 'Afbeelding';
-        $blockVariable->type = 'image';
+        $blockVariable->label = 'cms.image';
+        $blockVariable->type = BlockVariableType::TYPE_IMAGE;
         $blockVariable->required = 1;
+        $blockVariable->ordering = 3;
         $blockVariable->save();
 
         $blockVariable = new BlockVariable();
         $blockVariable->block_id = $newsletterBlock->id;
         $blockVariable->name = 'name';
-        $blockVariable->label = 'Naam';
-        $blockVariable->type = 'textfield';
+        $blockVariable->label = 'cms.name';
+        $blockVariable->type = BlockVariableType::TYPE_TEXTFIELD;
         $blockVariable->required = 1;
+        $blockVariable->ordering = 4;
         $blockVariable->save();
 
         $blockVariable = new BlockVariable();
         $blockVariable->block_id = $newsletterBlock->id;
         $blockVariable->name = 'phone_number';
-        $blockVariable->label = 'Telefoonnummer';
-        $blockVariable->type = 'textfield';
+        $blockVariable->label = 'cms.phoneNumber';
+        $blockVariable->type = BlockVariableType::TYPE_TEXTFIELD;
         $blockVariable->required = 1;
+        $blockVariable->ordering = 5;
         $blockVariable->save();
 
         $blockVariable = new BlockVariable();
         $blockVariable->block_id = $newsletterBlock->id;
         $blockVariable->name = 'text';
-        $blockVariable->label = 'Tekst';
-        $blockVariable->type = 'textarea';
+        $blockVariable->label = 'cms.text';
+        $blockVariable->type = BlockVariableType::TYPE_TEXTAREA;
         $blockVariable->required = 1;
+        $blockVariable->ordering = 6;
         $blockVariable->save();
 
         $blockVariable = new BlockVariable();
         $blockVariable->block_id = $newsletterBlock->id;
         $blockVariable->name = 'title';
-        $blockVariable->label = 'Titel';
-        $blockVariable->type = 'textfield';
+        $blockVariable->label = 'cms.title';
+        $blockVariable->type = BlockVariableType::TYPE_TEXTFIELD;
         $blockVariable->required = 1;
+        $blockVariable->ordering = 7;
         $blockVariable->save();
 
         $blockVariable = new BlockVariable();
         $blockVariable->block_id = $newsletterBlock->id;
         $blockVariable->name = 'url';
-        $blockVariable->label = 'Url';
-        $blockVariable->type = 'textfield';
+        $blockVariable->label = 'cms.url';
+        $blockVariable->type = BlockVariableType::TYPE_TEXTFIELD;
         $blockVariable->required = 1;
+        $blockVariable->ordering = 8;
         $blockVariable->save();
 
         $blockVariable = new BlockVariable();
         $blockVariable->block_id = $newsletterBlock->id;
         $blockVariable->name = 'url_text';
-        $blockVariable->label = 'Url tekst';
-        $blockVariable->type = 'textfield';
+        $blockVariable->label = 'cms.urlText';
+        $blockVariable->type = BlockVariableType::TYPE_TEXTFIELD;
         $blockVariable->required = 1;
+        $blockVariable->ordering = 9;
         $blockVariable->save();
     }
 

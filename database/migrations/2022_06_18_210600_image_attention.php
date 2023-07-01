@@ -1,7 +1,8 @@
 <?php
 
-use App\Block;
-use App\BlockVariable;
+use App\Models\Block;
+use App\Models\BlockVariable;
+use App\Models\BlockVariableType;
 use Illuminate\Database\Migrations\Migration;
 
 class ImageAttention extends Migration
@@ -21,25 +22,28 @@ class ImageAttention extends Migration
         $blockVariable = new BlockVariable();
         $blockVariable->block_id = $imageAttentionBlock->id;
         $blockVariable->name = 'image_left';
-        $blockVariable->label = 'Linkerafbeelding';
-        $blockVariable->type = 'image';
+        $blockVariable->label = 'cms.leftImage';
+        $blockVariable->type = BlockVariableType::TYPE_IMAGE;
         $blockVariable->required = 1;
+        $blockVariable->ordering = 1;
         $blockVariable->save();
 
         $blockVariable = new BlockVariable();
         $blockVariable->block_id = $imageAttentionBlock->id;
         $blockVariable->name = 'image_right_top';
-        $blockVariable->label = 'Afbeelding rechtsboven';
-        $blockVariable->type = 'image';
+        $blockVariable->label = 'cms.imageRightTop';
+        $blockVariable->type = BlockVariableType::TYPE_IMAGE;
         $blockVariable->required = 1;
+        $blockVariable->ordering = 2;
         $blockVariable->save();
 
         $blockVariable = new BlockVariable();
         $blockVariable->block_id = $imageAttentionBlock->id;
         $blockVariable->name = 'image_right_bottom';
-        $blockVariable->label = 'Afbeelding rechtsonder';
-        $blockVariable->type = 'image';
+        $blockVariable->label = 'cms.imageRightBottom';
+        $blockVariable->type = BlockVariableType::TYPE_IMAGE;
         $blockVariable->required = 1;
+        $blockVariable->ordering = 3;
         $blockVariable->save();
     }
 

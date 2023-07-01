@@ -1,7 +1,8 @@
 <?php
 
-use App\Block;
-use App\BlockVariable;
+use App\Models\Block;
+use App\Models\BlockVariable;
+use App\Models\BlockVariableType;
 use Illuminate\Database\Migrations\Migration;
 
 class Hero extends Migration
@@ -21,17 +22,19 @@ class Hero extends Migration
         $blockVariable = new BlockVariable();
         $blockVariable->block_id = $heroImageBlock->id;
         $blockVariable->name = 'image';
-        $blockVariable->label = 'Afbeelding';
-        $blockVariable->type = 'image';
+        $blockVariable->label = 'cms.image';
+        $blockVariable->type = BlockVariableType::TYPE_IMAGE;
         $blockVariable->required = 1;
+        $blockVariable->ordering = 1;
         $blockVariable->save();
 
         $blockVariable = new BlockVariable();
         $blockVariable->block_id = $heroImageBlock->id;
         $blockVariable->name = 'text';
-        $blockVariable->label = 'Tekst';
-        $blockVariable->type = 'textarea';
+        $blockVariable->label = 'cms.text';
+        $blockVariable->type = BlockVariableType::TYPE_TEXTAREA;
         $blockVariable->required = 0;
+        $blockVariable->ordering = 2;
         $blockVariable->save();
     }
 

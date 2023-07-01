@@ -2,13 +2,12 @@
 
 namespace Iws\Database\Seeders\Home;
 
-use App\Block;
-use App\BlockTemplate;
-use App\BlockVariable;
-use App\BlockVariableValue;
-use App\BlockVariableValueTemplateBlock;
-use App\Language;
-use App\Template;
+use App\Models\Block;
+use App\Models\BlockTemplate;
+use App\Models\BlockVariable;
+use App\Models\BlockVariableValue;
+use App\Models\Language;
+use App\Models\Template;
 use Illuminate\Database\Seeder;
 
 class BlockVariableValueSeeder extends Seeder
@@ -21,6 +20,7 @@ class BlockVariableValueSeeder extends Seeder
     public function run()
     {
         $language = Language::where('name', 'Nederlands')->first();
+        $page = Page::where('title', 'Home')->first();
 
         $paragraphBlock = Block::where('resource_id', 'iws_paragraph')->first();
         $imageAttentionBlock = Block::where('resource_id', 'iws_image_attention')->first();
@@ -106,366 +106,282 @@ class BlockVariableValueSeeder extends Seeder
                                               ->where('template_id', $template->id)
                                               ->first();
 
+
+        // First paragraph
         $blockVariableValue = new BlockVariableValue();
         $blockVariableValue->block_variable_id = $paragraphTitleBlockVariable->id;
         $blockVariableValue->language_id = $language->id;
+        $blockVariableValue->page_id = $page->id;
+        $blockVariableValue->block_template_id = $baseParagraphTemplateBlock1;
         $blockVariableValue->value = 'Lorem ipsum dolor sit amet';
         $blockVariableValue->save();
         $blockVariableValue->refresh();
-        $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
-        $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock1->id;
-        $blockVariableValueTemplateBlock->ordering = 1;
-        $blockVariableValueTemplateBlock->save();
 
         $blockVariableValue = new BlockVariableValue();
         $blockVariableValue->block_variable_id = $paragraphTextBlockVariable->id;
         $blockVariableValue->language_id = $language->id;
+        $blockVariableValue->page_id = $page->id;
+        $blockVariableValue->block_template_id = $baseParagraphTemplateBlock1;
         $blockVariableValue->value = 'Consectetur adipiscing elit. Proin ut magna et nibh dictum dignissim. Curabitur imperdiet tellus ac dolor dictum consequat. Morbi placerat mauris ac eros tincidunt, ut tristique sem ornare. Cras vitae libero dolor. Vestibulum blandit dapibus mi, in aliquam metus. Nulla tristique fermentum massa a interdum. Nullam lectus quam, hendrerit sollicitudin aliquet vitae, luctus sollicitudin massa. Nullam et volutpat lacus. Nam faucibus lorem mauris, vitae ornare ligula maximus facilisis.';
         $blockVariableValue->save();
         $blockVariableValue->refresh();
-        $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
-        $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock1->id;
-        $blockVariableValueTemplateBlock->ordering = 2;
-        $blockVariableValueTemplateBlock->save();
-
-        $blockVariableValue = new BlockVariableValue();
-        $blockVariableValue->block_variable_id = $paragraphTitleBlockVariable->id;
-        $blockVariableValue->language_id = $language->id;
-        $blockVariableValue->value = 'Lorem ipsum dolor sit amet';
-        $blockVariableValue->save();
-        $blockVariableValue->refresh();
-        $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
-        $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock2->id;
-        $blockVariableValueTemplateBlock->ordering = 1;
-        $blockVariableValueTemplateBlock->save();
-
-        $blockVariableValue = new BlockVariableValue();
-        $blockVariableValue->block_variable_id = $paragraphTextBlockVariable->id;
-        $blockVariableValue->language_id = $language->id;
-        $blockVariableValue->value = 'Consectetur adipiscing elit. Proin ut magna et nibh dictum dignissim. Curabitur imperdiet tellus ac dolor dictum consequat. Morbi placerat mauris ac eros tincidunt, ut tristique sem ornare. Cras vitae libero dolor. Vestibulum blandit dapibus mi, in aliquam metus. Nulla tristique fermentum massa a interdum. Nullam lectus quam, hendrerit sollicitudin aliquet vitae, luctus sollicitudin massa. Nullam et volutpat lacus. Nam faucibus lorem mauris, vitae ornare ligula maximus facilisis.';
-        $blockVariableValue->save();
-        $blockVariableValue->refresh();
-        $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
-        $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock2->id;
-        $blockVariableValueTemplateBlock->ordering = 2;
-        $blockVariableValueTemplateBlock->save();
 
         $blockVariableValue = new BlockVariableValue();
         $blockVariableValue->block_variable_id = $paragraphImageBlockVariable->id;
         $blockVariableValue->language_id = $language->id;
+        $blockVariableValue->page_id = $page->id;
+        $blockVariableValue->block_template_id = $baseParagraphTemplateBlock1;
         $blockVariableValue->value = 'images/placeholder.jpg';
         $blockVariableValue->save();
         $blockVariableValue->refresh();
-        $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
-        $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock1->id;
-        $blockVariableValueTemplateBlock->ordering = 3;
-        $blockVariableValueTemplateBlock->save();
 
         $blockVariableValue = new BlockVariableValue(); // id=18
         $blockVariableValue->block_variable_id = $paragraphImagePositionBlockVariable1->id;
         $blockVariableValue->language_id = $language->id;
+        $blockVariableValue->page_id = $page->id;
+        $blockVariableValue->block_template_id = $baseParagraphTemplateBlock1;
         $blockVariableValue->value = 'left';
         $blockVariableValue->save();
         $blockVariableValue->refresh();
 
-        $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
-        $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock2->id;
-        $blockVariableValueTemplateBlock->ordering = 6;
-        $blockVariableValueTemplateBlock->save();
-
-        $blockVariableValue = new BlockVariableValue(); // id=21
-        $blockVariableValue->block_variable_id = $paragraphImagePositionBlockVariable1->id;
-        $blockVariableValue->language_id = $language->id;
-        $blockVariableValue->value = 'right';
-        $blockVariableValue->save();
-        $blockVariableValue->refresh();
-
-        $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
-        $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock4->id;
-        $blockVariableValueTemplateBlock->ordering = 4;
-        $blockVariableValueTemplateBlock->save();
-
         $blockVariableValue = new BlockVariableValue();
         $blockVariableValue->block_variable_id = $paragraphUrlBlockVariable->id;
         $blockVariableValue->language_id = $language->id;
+        $blockVariableValue->page_id = $page->id;
+        $blockVariableValue->block_template_id = $baseParagraphTemplateBlock1;
         $blockVariableValue->value = '/home';
         $blockVariableValue->save();
         $blockVariableValue->refresh();
-        $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
-        $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock1->id;
-        $blockVariableValueTemplateBlock->ordering = 4;
-        $blockVariableValueTemplateBlock->save();
 
         $blockVariableValue = new BlockVariableValue();
         $blockVariableValue->block_variable_id = $paragraphUrlTextBlockVariable->id;
         $blockVariableValue->language_id = $language->id;
+        $blockVariableValue->page_id = $page->id;
+        $blockVariableValue->block_template_id = $baseParagraphTemplateBlock1;
         $blockVariableValue->value = 'Lees meer';
         $blockVariableValue->save();
         $blockVariableValue->refresh();
-        $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
-        $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock1->id;
-        $blockVariableValueTemplateBlock->ordering = 5;
-        $blockVariableValueTemplateBlock->save();
 
+        // Second paragraph
         $blockVariableValue = new BlockVariableValue();
         $blockVariableValue->block_variable_id = $paragraphTitleBlockVariable->id;
         $blockVariableValue->language_id = $language->id;
+        $blockVariableValue->page_id = $page->id;
+        $blockVariableValue->block_template_id = $baseParagraphTemplateBlock2;
         $blockVariableValue->value = 'Lorem ipsum dolor sit amet';
         $blockVariableValue->save();
         $blockVariableValue->refresh();
-        $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
-        $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock3->id;
-        $blockVariableValueTemplateBlock->ordering = 1;
-        $blockVariableValueTemplateBlock->save();
-
-        $blockVariableValue = new BlockVariableValue();
-        $blockVariableValue->block_variable_id = $paragraphTitleBlockVariable->id;
-        $blockVariableValue->language_id = $language->id;
-        $blockVariableValue->value = 'Lorem ipsum dolor sit amet';
-        $blockVariableValue->save();
-        $blockVariableValue->refresh();
-        $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
-        $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock4->id;
-        $blockVariableValueTemplateBlock->ordering = 1;
-        $blockVariableValueTemplateBlock->save();
 
         $blockVariableValue = new BlockVariableValue();
         $blockVariableValue->block_variable_id = $paragraphTextBlockVariable->id;
         $blockVariableValue->language_id = $language->id;
+        $blockVariableValue->page_id = $page->id;
+        $blockVariableValue->block_template_id = $baseParagraphTemplateBlock2;
         $blockVariableValue->value = 'Consectetur adipiscing elit. Proin ut magna et nibh dictum dignissim. Curabitur imperdiet tellus ac dolor dictum consequat. Morbi placerat mauris ac eros tincidunt, ut tristique sem ornare. Cras vitae libero dolor. Vestibulum blandit dapibus mi, in aliquam metus. Nulla tristique fermentum massa a interdum. Nullam lectus quam, hendrerit sollicitudin aliquet vitae, luctus sollicitudin massa. Nullam et volutpat lacus. Nam faucibus lorem mauris, vitae ornare ligula maximus facilisis.';
         $blockVariableValue->save();
         $blockVariableValue->refresh();
-        $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
-        $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock3->id;
-        $blockVariableValueTemplateBlock->ordering = 2;
-        $blockVariableValueTemplateBlock->save();
-
-        $blockVariableValue = new BlockVariableValue();
-        $blockVariableValue->block_variable_id = $paragraphTextBlockVariable->id;
-        $blockVariableValue->language_id = $language->id;
-        $blockVariableValue->value = 'Consectetur adipiscing elit. Proin ut magna et nibh dictum dignissim. Curabitur imperdiet tellus ac dolor dictum consequat. Morbi placerat mauris ac eros tincidunt, ut tristique sem ornare. Cras vitae libero dolor. Vestibulum blandit dapibus mi, in aliquam metus. Nulla tristique fermentum massa a interdum. Nullam lectus quam, hendrerit sollicitudin aliquet vitae, luctus sollicitudin massa. Nullam et volutpat lacus. Nam faucibus lorem mauris, vitae ornare ligula maximus facilisis.';
-        $blockVariableValue->save();
-        $blockVariableValue->refresh();
-        $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
-        $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock4->id;
-        $blockVariableValueTemplateBlock->ordering = 2;
-        $blockVariableValueTemplateBlock->save();
 
         $blockVariableValue = new BlockVariableValue();
         $blockVariableValue->block_variable_id = $paragraphImageBlockVariable->id;
         $blockVariableValue->language_id = $language->id;
+        $blockVariableValue->page_id = $page->id;
+        $blockVariableValue->block_template_id = $baseParagraphTemplateBlock2;
         $blockVariableValue->value = 'images/placeholder.jpg';
         $blockVariableValue->save();
         $blockVariableValue->refresh();
-        $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
-        $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseParagraphTemplateBlock4->id;
-        $blockVariableValueTemplateBlock->ordering = 3;
-        $blockVariableValueTemplateBlock->save();
 
+        $blockVariableValue = new BlockVariableValue(); // id=21
+        $blockVariableValue->block_variable_id = $paragraphImagePositionBlockVariable1->id;
+        $blockVariableValue->language_id = $language->id;
+        $blockVariableValue->page_id = $page->id;
+        $blockVariableValue->block_template_id = $baseParagraphTemplateBlock2;
+        $blockVariableValue->value = 'right';
+        $blockVariableValue->save();
+        $blockVariableValue->refresh();
+
+        // Third paragraph
+        $blockVariableValue = new BlockVariableValue();
+        $blockVariableValue->block_variable_id = $paragraphTitleBlockVariable->id;
+        $blockVariableValue->language_id = $language->id;
+        $blockVariableValue->page_id = $page->id;
+        $blockVariableValue->block_template_id = $baseParagraphTemplateBlock3;
+        $blockVariableValue->value = 'Lorem ipsum dolor sit amet';
+        $blockVariableValue->save();
+        $blockVariableValue->refresh();
+
+        $blockVariableValue = new BlockVariableValue();
+        $blockVariableValue->block_variable_id = $paragraphTextBlockVariable->id;
+        $blockVariableValue->language_id = $language->id;
+        $blockVariableValue->page_id = $page->id;
+        $blockVariableValue->block_template_id = $baseParagraphTemplateBlock3;
+        $blockVariableValue->value = 'Consectetur adipiscing elit. Proin ut magna et nibh dictum dignissim. Curabitur imperdiet tellus ac dolor dictum consequat. Morbi placerat mauris ac eros tincidunt, ut tristique sem ornare. Cras vitae libero dolor. Vestibulum blandit dapibus mi, in aliquam metus. Nulla tristique fermentum massa a interdum. Nullam lectus quam, hendrerit sollicitudin aliquet vitae, luctus sollicitudin massa. Nullam et volutpat lacus. Nam faucibus lorem mauris, vitae ornare ligula maximus facilisis.';
+        $blockVariableValue->save();
+        $blockVariableValue->refresh();
+
+        // Fourth paragraph
+        $blockVariableValue = new BlockVariableValue();
+        $blockVariableValue->block_variable_id = $paragraphTitleBlockVariable->id;
+        $blockVariableValue->language_id = $language->id;
+        $blockVariableValue->page_id = $page->id;
+        $blockVariableValue->block_template_id = $baseParagraphTemplateBlock4;
+        $blockVariableValue->value = 'Lorem ipsum dolor sit amet';
+        $blockVariableValue->save();
+        $blockVariableValue->refresh();
+
+        $blockVariableValue = new BlockVariableValue();
+        $blockVariableValue->block_variable_id = $paragraphTextBlockVariable->id;
+        $blockVariableValue->language_id = $language->id;
+        $blockVariableValue->page_id = $page->id;
+        $blockVariableValue->block_template_id = $baseParagraphTemplateBlock4;
+        $blockVariableValue->value = 'Consectetur adipiscing elit. Proin ut magna et nibh dictum dignissim. Curabitur imperdiet tellus ac dolor dictum consequat. Morbi placerat mauris ac eros tincidunt, ut tristique sem ornare. Cras vitae libero dolor. Vestibulum blandit dapibus mi, in aliquam metus. Nulla tristique fermentum massa a interdum. Nullam lectus quam, hendrerit sollicitudin aliquet vitae, luctus sollicitudin massa. Nullam et volutpat lacus. Nam faucibus lorem mauris, vitae ornare ligula maximus facilisis.';
+        $blockVariableValue->save();
+        $blockVariableValue->refresh();
+
+        // Image attention
         $blockVariableValue = new BlockVariableValue();
         $blockVariableValue->block_variable_id = $attentionImageLeftBlockVariable->id;
         $blockVariableValue->language_id = $language->id;
+        $blockVariableValue->page_id = $page->id;
+        $blockVariableValue->block_template_id = $baseImageAttentionTemplateBlock;
         $blockVariableValue->value = 'images/placeholder.jpg';
         $blockVariableValue->save();
         $blockVariableValue->refresh();
-        $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
-        $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseImageAttentionTemplateBlock->id;
-        $blockVariableValueTemplateBlock->ordering = 1;
-        $blockVariableValueTemplateBlock->save();
 
         $blockVariableValue = new BlockVariableValue();
         $blockVariableValue->block_variable_id = $attentionImageRightTopBlockVariable->id;
         $blockVariableValue->language_id = $language->id;
+        $blockVariableValue->page_id = $page->id;
+        $blockVariableValue->block_template_id = $baseImageAttentionTemplateBlock;
         $blockVariableValue->value = 'images/placeholder.jpg';
         $blockVariableValue->save();
         $blockVariableValue->refresh();
-        $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
-        $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseImageAttentionTemplateBlock->id;
-        $blockVariableValueTemplateBlock->ordering = 2;
-        $blockVariableValueTemplateBlock->save();
 
         $blockVariableValue = new BlockVariableValue();
         $blockVariableValue->block_variable_id = $attentionImageRightBottomBlockVariable->id;
         $blockVariableValue->language_id = $language->id;
+        $blockVariableValue->page_id = $page->id;
+        $blockVariableValue->block_template_id = $baseImageAttentionTemplateBlock;
         $blockVariableValue->value = 'images/placeholder.jpg';
         $blockVariableValue->save();
         $blockVariableValue->refresh();
-        $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
-        $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseImageAttentionTemplateBlock->id;
-        $blockVariableValueTemplateBlock->ordering = 3;
-        $blockVariableValueTemplateBlock->save();
 
+        // Newsletter
         $blockVariableValue = new BlockVariableValue();
         $blockVariableValue->block_variable_id = $newsletterImageLeftBlockVariable->id;
         $blockVariableValue->language_id = $language->id;
+        $blockVariableValue->page_id = $page->id;
+        $blockVariableValue->block_template_id = $baseNewsletterTemplateBlock;
         $blockVariableValue->value = 'images/placeholder.jpg';
         $blockVariableValue->save();
         $blockVariableValue->refresh();
-        $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
-        $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseNewsletterTemplateBlock->id;
-        $blockVariableValueTemplateBlock->ordering = 1;
-        $blockVariableValueTemplateBlock->save();
 
         $blockVariableValue = new BlockVariableValue();
         $blockVariableValue->block_variable_id = $newsletterTitleBlockVariable->id;
         $blockVariableValue->language_id = $language->id;
+        $blockVariableValue->page_id = $page->id;
+        $blockVariableValue->block_template_id = $baseNewsletterTemplateBlock;
         $blockVariableValue->value = 'Aanmelden nieuwsbrief';
         $blockVariableValue->save();
         $blockVariableValue->refresh();
-        $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
-        $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseNewsletterTemplateBlock->id;
-        $blockVariableValueTemplateBlock->ordering = 2;
-        $blockVariableValueTemplateBlock->save();
 
         $blockVariableValue = new BlockVariableValue();
         $blockVariableValue->block_variable_id = $newsletterTextBlockVariable->id;
         $blockVariableValue->language_id = $language->id;
+        $blockVariableValue->page_id = $page->id;
+        $blockVariableValue->block_template_id = $baseNewsletterTemplateBlock;
         $blockVariableValue->value = 'Voor info over de nieuwste musthaves!';
         $blockVariableValue->save();
         $blockVariableValue->refresh();
-        $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
-        $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseNewsletterTemplateBlock->id;
-        $blockVariableValueTemplateBlock->ordering = 3;
-        $blockVariableValueTemplateBlock->save();
 
         $blockVariableValue = new BlockVariableValue();
         $blockVariableValue->block_variable_id = $newsletterImageRightBlockVariable->id;
         $blockVariableValue->language_id = $language->id;
+        $blockVariableValue->page_id = $page->id;
+        $blockVariableValue->block_template_id = $baseNewsletterTemplateBlock;
         $blockVariableValue->value = 'images/placeholder.jpg';
         $blockVariableValue->save();
         $blockVariableValue->refresh();
-        $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
-        $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseNewsletterTemplateBlock->id;
-        $blockVariableValueTemplateBlock->ordering = 4;
-        $blockVariableValueTemplateBlock->save();
 
+        // CTA
         $blockVariableValue = new BlockVariableValue();
         $blockVariableValue->block_variable_id = $ctaTitleBlockVariable->id;
         $blockVariableValue->language_id = $language->id;
+        $blockVariableValue->page_id = $page->id;
+        $blockVariableValue->block_template_id = $baseCtaTemplateBlock;
         $blockVariableValue->value = 'Lorem ipsum dolor sit amet';
         $blockVariableValue->save();
         $blockVariableValue->refresh();
-        $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
-        $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseCtaTemplateBlock->id;
-        $blockVariableValueTemplateBlock->ordering = 1;
-        $blockVariableValueTemplateBlock->save();
 
         $blockVariableValue = new BlockVariableValue();
         $blockVariableValue->block_variable_id = $ctaTextBlockVariable->id;
         $blockVariableValue->language_id = $language->id;
+        $blockVariableValue->page_id = $page->id;
+        $blockVariableValue->block_template_id = $baseCtaTemplateBlock;
         $blockVariableValue->value = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut magna et nibh.';
         $blockVariableValue->save();
         $blockVariableValue->refresh();
-        $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
-        $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseCtaTemplateBlock->id;
-        $blockVariableValueTemplateBlock->ordering = 2;
-        $blockVariableValueTemplateBlock->save();
 
         $blockVariableValue = new BlockVariableValue();
         $blockVariableValue->block_variable_id = $ctaImageBlockVariable->id;
         $blockVariableValue->language_id = $language->id;
+        $blockVariableValue->page_id = $page->id;
+        $blockVariableValue->block_template_id = $baseCtaTemplateBlock;
         $blockVariableValue->value = 'images/placeholder.jpg';
         $blockVariableValue->save();
         $blockVariableValue->refresh();
-        $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
-        $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseCtaTemplateBlock->id;
-        $blockVariableValueTemplateBlock->ordering = 3;
-        $blockVariableValueTemplateBlock->save();
 
         $blockVariableValue = new BlockVariableValue();
         $blockVariableValue->block_variable_id = $ctaNameBlockVariable->id;
         $blockVariableValue->language_id = $language->id;
+        $blockVariableValue->page_id = $page->id;
+        $blockVariableValue->block_template_id = $baseCtaTemplateBlock;
         $blockVariableValue->value = 'Linda Vishers';
         $blockVariableValue->save();
         $blockVariableValue->refresh();
-        $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
-        $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseCtaTemplateBlock->id;
-        $blockVariableValueTemplateBlock->ordering = 4;
-        $blockVariableValueTemplateBlock->save();
 
         $blockVariableValue = new BlockVariableValue();
         $blockVariableValue->block_variable_id = $ctaFunctionBlockVariable->id;
         $blockVariableValue->language_id = $language->id;
+        $blockVariableValue->page_id = $page->id;
+        $blockVariableValue->block_template_id = $baseCtaTemplateBlock;
         $blockVariableValue->value = 'CEO';
         $blockVariableValue->save();
         $blockVariableValue->refresh();
-        $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
-        $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseCtaTemplateBlock->id;
-        $blockVariableValueTemplateBlock->ordering = 5;
-        $blockVariableValueTemplateBlock->save();
 
         $blockVariableValue = new BlockVariableValue();
         $blockVariableValue->block_variable_id = $ctaPhoneBlockVariable->id;
         $blockVariableValue->language_id = $language->id;
+        $blockVariableValue->page_id = $page->id;
+        $blockVariableValue->block_template_id = $baseCtaTemplateBlock;
         $blockVariableValue->value = '06 12 34 56 78';
         $blockVariableValue->save();
         $blockVariableValue->refresh();
-        $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
-        $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseCtaTemplateBlock->id;
-        $blockVariableValueTemplateBlock->ordering = 6;
-        $blockVariableValueTemplateBlock->save();
 
         $blockVariableValue = new BlockVariableValue();
         $blockVariableValue->block_variable_id = $ctaEmailBlockVariable->id;
         $blockVariableValue->language_id = $language->id;
+        $blockVariableValue->page_id = $page->id;
+        $blockVariableValue->block_template_id = $baseCtaTemplateBlock;
         $blockVariableValue->value = 'linda@musthaves4u.nl';
         $blockVariableValue->save();
         $blockVariableValue->refresh();
-        $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
-        $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseCtaTemplateBlock->id;
-        $blockVariableValueTemplateBlock->ordering = 7;
-        $blockVariableValueTemplateBlock->save();
 
         $blockVariableValue = new BlockVariableValue();
         $blockVariableValue->block_variable_id = $ctaUrlBlockVariable->id;
         $blockVariableValue->language_id = $language->id;
+        $blockVariableValue->page_id = $page->id;
+        $blockVariableValue->block_template_id = $baseCtaTemplateBlock;
         $blockVariableValue->value = '/contact';
         $blockVariableValue->save();
         $blockVariableValue->refresh();
-        $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
-        $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseCtaTemplateBlock->id;
-        $blockVariableValueTemplateBlock->ordering = 8;
-        $blockVariableValueTemplateBlock->save();
 
         $blockVariableValue = new BlockVariableValue();
         $blockVariableValue->block_variable_id = $ctaUrlTextBlockVariable->id;
         $blockVariableValue->language_id = $language->id;
+        $blockVariableValue->page_id = $page->id;
+        $blockVariableValue->block_template_id = $baseCtaTemplateBlock;
         $blockVariableValue->value = 'Neem contact op';
         $blockVariableValue->save();
         $blockVariableValue->refresh();
-        $blockVariableValueTemplateBlock = new BlockVariableValueTemplateBlock();
-        $blockVariableValueTemplateBlock->block_variable_value_id = $blockVariableValue->id;
-        $blockVariableValueTemplateBlock->template_block_id = $baseCtaTemplateBlock->id;
-        $blockVariableValueTemplateBlock->ordering = 9;
-        $blockVariableValueTemplateBlock->save();
     }
 }

@@ -1,8 +1,9 @@
 <?php
 
-use App\Block;
-use App\BlockVariable;
-use App\BlockVariableOption;
+use App\Models\Block;
+use App\Models\BlockVariable;
+use App\Models\BlockVariableOption;
+use App\Models\BlockVariableType;
 use Illuminate\Database\Migrations\Migration;
 
 class Paragraph extends Migration
@@ -22,61 +23,66 @@ class Paragraph extends Migration
         $blockVariable = new BlockVariable();
         $blockVariable->block_id = $paragraphBlock->id;
         $blockVariable->name = 'title';
-        $blockVariable->label = 'Titel';
-        $blockVariable->type = 'textfield';
+        $blockVariable->label = 'cms.title';
+        $blockVariable->type = BlockVariableType::TYPE_TEXTFIELD;
         $blockVariable->required = 1;
+        $blockVariable->ordering = 1;
         $blockVariable->save();
 
         $blockVariable = new BlockVariable();
         $blockVariable->block_id = $paragraphBlock->id;
         $blockVariable->name = 'text';
-        $blockVariable->label = 'Tekst';
-        $blockVariable->type = 'textarea';
-        $blockVariable->required = 1;
+        $blockVariable->label = 'cms.text';
+        $blockVariable->type = BlockVariableType::TYPE_TEXTAREA;
+        $blockVariable->required = 2;
         $blockVariable->save();
 
         $blockVariable = new BlockVariable();
         $blockVariable->block_id = $paragraphBlock->id;
         $blockVariable->name = 'image';
-        $blockVariable->label = 'Afbeelding';
-        $blockVariable->type = 'image';
+        $blockVariable->label = 'cms.image';
+        $blockVariable->type = BlockVariableType::TYPE_IMAGE;
         $blockVariable->required = 0;
+        $blockVariable->ordering = 3;
         $blockVariable->save();
 
         $blockVariable = new BlockVariable();
         $blockVariable->block_id = $paragraphBlock->id;
         $blockVariable->name = 'url';
-        $blockVariable->label = 'Url';
-        $blockVariable->type = 'textfield';
+        $blockVariable->label = 'cms.url';
+        $blockVariable->type = BlockVariableType::TYPE_TEXTFIELD;
         $blockVariable->required = 0;
+        $blockVariable->ordering = 4;
         $blockVariable->save();
 
         $blockVariable = new BlockVariable();
         $blockVariable->block_id = $paragraphBlock->id;
         $blockVariable->name = 'url_text';
-        $blockVariable->label = 'Url tekst';
-        $blockVariable->type = 'textfield';
+        $blockVariable->label = 'cms.urlText';
+        $blockVariable->type = BlockVariableType::TYPE_TEXTFIELD;
         $blockVariable->required = 0;
+        $blockVariable->ordering = 5;
         $blockVariable->save();
 
         $imagePositionBlockVariable = new BlockVariable();
         $imagePositionBlockVariable->block_id = $paragraphBlock->id;
         $imagePositionBlockVariable->name = 'image_position';
-        $imagePositionBlockVariable->label = 'Afbeeldingspositie';
-        $imagePositionBlockVariable->type = 'dropdown';
+        $imagePositionBlockVariable->label = 'cms.imagePosition';
+        $imagePositionBlockVariable->type = BlockVariableType::TYPE_DROPDOWN;
         $imagePositionBlockVariable->required = 0;
+        $imagePositionBlockVariable->ordering = 6;
         $imagePositionBlockVariable->save();
         $imagePositionBlockVariable->refresh();
 
         // block_variable_options
         $blockVariableOption = new BlockVariableOption();
         $blockVariableOption->block_variable_id = $imagePositionBlockVariable->id;
-        $blockVariableOption->label = 'Links';
+        $blockVariableOption->label = 'cms.links';
         $blockVariableOption->value = 'left';
         $blockVariableOption->save();
         $blockVariableOption = new BlockVariableOption();
         $blockVariableOption->block_variable_id = $imagePositionBlockVariable->id;
-        $blockVariableOption->label = 'Rechts';
+        $blockVariableOption->label = 'cms.right';
         $blockVariableOption->value = 'right';
         $blockVariableOption->save();
     }

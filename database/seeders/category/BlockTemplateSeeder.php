@@ -2,9 +2,9 @@
 
 namespace Iws\Database\Seeders\Category;
 
-use App\Block;
-use App\BlockTemplate;
-use App\Template;
+use App\Models\Block;
+use App\Models\BlockTemplate;
+use App\Models\Template;
 use Illuminate\Database\Seeder;
 
 class BlockTemplateSeeder extends Seeder

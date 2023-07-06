@@ -8,7 +8,7 @@
             <p>
                 {{ $block->getBlockValues()->text }}
             </p>
-            @isset($block->getBlockValues()->url)
+            @if($block->getBlockValues()->url)
             <p>
                 <a href="{{ $block->getBlockValues()->url }}" class="btn btn-secondary">
                     @isset($block->getBlockValues()->url_text)
@@ -19,7 +19,7 @@
                     @endisset
                 </a>
             </p>
-            @endisset
+            @endif
         </div>
         @if(isset($block->getBlockValues()->image) && isset($block->getBlockValues()->image_position) && $block->getBlockValues()->image_position === 'right')
             <div class="col-sm"><img src="{{url($block->getBlockValues()->image)}}" class="img-fluid"></div>

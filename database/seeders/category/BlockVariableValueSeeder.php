@@ -2,12 +2,12 @@
 
 namespace Iws\Database\Seeders\Category;
 
-use App\Models\Block;
-use App\Models\BlockTemplate;
-use App\Models\BlockVariable;
-use App\Models\BlockVariableValue;
-use App\Models\Language;
-use App\Models\Template;
+use Insyht\Larvelous\Models\Block;
+use Insyht\Larvelous\Models\BlockTemplate;
+use Insyht\Larvelous\Models\BlockVariable;
+use Insyht\Larvelous\Models\BlockVariableValue;
+use Insyht\Larvelous\Models\Language;
+use Insyht\Larvelous\Models\Template;
 use Illuminate\Database\Seeder;
 
 class BlockVariableValueSeeder extends Seeder

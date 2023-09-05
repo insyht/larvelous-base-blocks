@@ -1,10 +1,10 @@
 <?php
 
-use App\Models\Block;
-use App\Models\BlockTemplate;
-use App\Models\BlockVariable;
-use App\Models\BlockVariableType;
-use App\Models\Template;
+use Insyht\Larvelous\Models\Block;
+use Insyht\Larvelous\Models\BlockTemplate;
+use Insyht\Larvelous\Models\BlockVariable;
+use Insyht\Larvelous\Models\BlockVariableType;
+use Insyht\Larvelous\Models\Template;
 use Illuminate\Database\Migrations\Migration;
 
 class LandingPage extends Migration

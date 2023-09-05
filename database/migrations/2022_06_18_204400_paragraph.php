@@ -1,9 +1,9 @@
 <?php
 
-use App\Models\Block;
-use App\Models\BlockVariable;
-use App\Models\BlockVariableOption;
-use App\Models\BlockVariableType;
+use Insyht\Larvelous\Models\Block;
+use Insyht\Larvelous\Models\BlockVariable;
+use Insyht\Larvelous\Models\BlockVariableOption;
+use Insyht\Larvelous\Models\BlockVariableType;
 use Illuminate\Database\Migrations\Migration;
 
 class Paragraph extends Migration

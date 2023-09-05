@@ -2,9 +2,9 @@
 
 namespace Iws\Database\Seeders\Home;
 
-use App\Models\Block;
-use App\Models\BlockTemplate;
-use App\Models\Template;
+use Insyht\Larvelous\Models\Block;
+use Insyht\Larvelous\Models\BlockTemplate;
+use Insyht\Larvelous\Models\Template;
 use Illuminate\Database\Seeder;
 
 class BlockTemplateSeeder extends Seeder

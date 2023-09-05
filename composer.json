@@ -1,14 +1,40 @@
 {
-    "name": "insyht/larvelous-base-blocks",
-    "type": "project",
-    "description": "Basic blocks for the Larvelous CMS.",
-    "keywords": [
-        "cms",
-        "larvelous"
-    ],
-    "minimum-stability": "stable",
-    "prefer-stable": true,
-    "require": {
-        "php": ">=8.0"
+  "name": "insyht/larvelous-base-blocks",
+  "type": "library",
+  "description": "Basic blocks for the Larvelous CMS.",
+  "keywords": [
+    "cms",
+    "larvelous",
+    "blocks"
+  ],
+  "repositories": [
+    {
+      "type": "path",
+      "url": "../iwscms"
     }
+  ],
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Insyht\\LarvelousBaseBlocks\\Providers\\BaseBlocksServiceProvider"
+      ]
+    }
+  }, "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "Insyht\\LarvelousBaseBlocks\\": "src"
+    }
+  },
+  "require": {
+    "php": ">=8.0",
+    "insyht/larvelous": "dev-package"
+  },
+  "config": {
+    "allow-plugins": {
+      "php-http/discovery": true
+    }
+  },
+  "require-dev": {
+    "orchestra/testbench": "^8.0"
+  }
 }

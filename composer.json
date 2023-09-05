@@ -26,8 +26,7 @@
     }
   },
   "require": {
-    "php": ">=8.0",
-    "insyht/larvelous": "dev-package"
+    "php": ">=8.0"
   },
   "config": {
     "allow-plugins": {

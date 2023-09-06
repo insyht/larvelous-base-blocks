@@ -21,7 +21,7 @@ class LandingPage extends Migration
         // Header block
         $landingPageHeaderBlock = new Block();
         $landingPageHeaderBlock->resource_id = 'iws_landing_page_header';
-        $landingPageHeaderBlock->view = 'insyht/larvelous-base-blocks/resources/views/blocks/landing_page_header';
+        $landingPageHeaderBlock->view = 'insyht-larvelous-base-blocks::blocks.landing_page_header';
         $landingPageHeaderBlock->label = 'Landing page header';
         $landingPageHeaderBlock->description = 'A header with a title, subtitle, text, quote, link button and background image';
         $landingPageHeaderBlock->save();
@@ -111,7 +111,7 @@ class LandingPage extends Migration
         // Image tetralogy block
         $tetralogyBlock = new Block();
         $tetralogyBlock->resource_id = 'iws_image_tetralogy';
-        $tetralogyBlock->view = 'insyht/larvelous-base-blocks/resources/views/blocks/image_tetralogy';
+        $tetralogyBlock->view = 'insyht-larvelous-base-blocks::blocks.image_tetralogy';
         $tetralogyBlock->label = 'Image Tetralogy';
         $tetralogyBlock->description = 'A title with four images';
         $tetralogyBlock->save();
@@ -139,7 +139,7 @@ class LandingPage extends Migration
         // Title+text block
         $titleTextBlock = new Block();
         $titleTextBlock->resource_id = 'iws_title_text';
-        $titleTextBlock->view = 'insyht/larvelous-base-blocks/resources/views/blocks/title_text';
+        $titleTextBlock->view = 'insyht-larvelous-base-blocks::blocks.title_text';
         $titleTextBlock->label = 'Title + text';
         $titleTextBlock->description = 'Title and a text';
         $titleTextBlock->save();
@@ -165,7 +165,7 @@ class LandingPage extends Migration
 
         $uspsBlock = new Block();
         $uspsBlock->resource_id = 'iws_usps';
-        $uspsBlock->view = 'insyht/larvelous-base-blocks/resources/views/blocks/usps';
+        $uspsBlock->view = 'insyht-larvelous-base-blocks::blocks.usps';
         $uspsBlock->label = 'USPs';
         $uspsBlock->description = 'Three USPs';
         $uspsBlock->save();

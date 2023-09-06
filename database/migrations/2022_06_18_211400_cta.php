@@ -12,7 +12,7 @@ class Cta extends Migration
         // blocks
         $newsletterBlock = new Block();
         $newsletterBlock->resource_id = 'iws_cta';
-        $newsletterBlock->view = 'insyht/larvelous-base-blocks/resources/views/blocks/cta';
+        $newsletterBlock->view = 'insyht-larvelous-base-blocks::blocks.blocks/cta';
         $newsletterBlock->label = 'Call to action';
         $newsletterBlock->description = 'Call to action';
         $newsletterBlock->save();

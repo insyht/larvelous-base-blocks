@@ -14,7 +14,7 @@ class LandingPage extends Migration
         $template = new Template();
         $template->resource_id = 'iws_landing_page';
         $template->label = 'Landing page';
-        $template->view = 'landingpage';
+        $template->view = 'insyht-larvelous::landingpage';
         $template->save();
         $template->refresh();
 

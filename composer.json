@@ -7,26 +7,22 @@
     "larvelous",
     "blocks"
   ],
-  "repositories": [
-    {
-      "type": "path",
-      "url": "../iwscms"
-    }
-  ],
   "extra": {
     "laravel": {
       "providers": [
         "Insyht\\LarvelousBaseBlocks\\Providers\\BaseBlocksServiceProvider"
       ]
     }
-  }, "minimum-stability": "dev",
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "autoload": {
     "psr-4": {
       "Insyht\\LarvelousBaseBlocks\\": "src"
     }
   },
   "require": {
-    "php": ">=8.0"
+    "php": "^8.2"
   },
   "config": {
     "allow-plugins": {

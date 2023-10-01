@@ -35,6 +35,7 @@ class Paragraph extends Migration
         $blockVariable->label = 'cms.text';
         $blockVariable->type = BlockVariableType::TYPE_TEXTAREA;
         $blockVariable->required = 2;
+        $blockVariable->ordering = 2;
         $blockVariable->save();
 
         $blockVariable = new BlockVariable();

@@ -187,7 +187,7 @@ class LandingPage extends Migration
             $blockVariable->label = 'cms.title';
             $blockVariable->type = BlockVariableType::TYPE_TEXTFIELD;
             $blockVariable->required = 1;
-            $blockVariable->ordering = $i = 1;
+            $blockVariable->ordering = $i + 1;
             $blockVariable->save();
 
             $blockVariable = new BlockVariable();

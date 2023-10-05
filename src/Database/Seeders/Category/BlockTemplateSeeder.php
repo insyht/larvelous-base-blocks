@@ -1,6 +1,6 @@
 <?php
 
-namespace Iws\Database\Seeders\Category;
+namespace Insyht\LarvelousBaseBlocks\Database\Seeders\Category;
 
 use Insyht\Larvelous\Models\Block;
 use Insyht\Larvelous\Models\BlockTemplate;

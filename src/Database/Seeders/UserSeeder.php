@@ -1,6 +1,6 @@
 <?php
 
-namespace Iws\Database\Seeders;
+namespace Insyht\LarvelousBaseBlocks\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;

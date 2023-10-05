@@ -1,12 +1,13 @@
 <?php
 
-namespace Iws\Database\Seeders\Category;
+namespace Insyht\LarvelousBaseBlocks\Database\Seeders\Category;
 
 use Insyht\Larvelous\Models\Block;
 use Insyht\Larvelous\Models\BlockTemplate;
 use Insyht\Larvelous\Models\BlockVariable;
 use Insyht\Larvelous\Models\BlockVariableValue;
 use Insyht\Larvelous\Models\Language;
+use Insyht\Larvelous\Models\Page;
 use Insyht\Larvelous\Models\Template;
 use Illuminate\Database\Seeder;
 
